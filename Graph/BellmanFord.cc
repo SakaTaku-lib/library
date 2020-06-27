@@ -14,9 +14,7 @@ struct BellmanFord {
       Graph(int n=0):V(n),E(n){};
    };
    Graph G; int s;
-   BellmanFord(int n, int s):G(n),s(s){
-      init();
-   }
+   BellmanFord(int n, int s):G(n),s(s){init();}
    void init(){
       for (int i = 0; i < G.V.size(); i++){
          G.V[i].id = i;
@@ -42,7 +40,7 @@ struct BellmanFord {
                Relax(G.V[j], G.V[G.E[j][k].EndPoint], G.E[j][k].weight);
       for (int i = 0; i < G.E.size(); i++)
          for (int j = 0; j < G.E[i].size(); j++){
-            if (G.V[i].d == INF)continue;
+            if (G.V[i].d == INF)continue;//始点からたどり着けない位置での負のループを回避
             if (G.V[G.E[i][j].EndPoint].d > G.V[i].d + G.E[i][j].weight)
                return false;
          }
@@ -69,5 +67,5 @@ struct BellmanFord {
 /*main関数*/
 //BellmanFord bf(n,s)、
 //for(|E|) bf.add(v,w,weight)
-//if bf.solve() bf.PrintPath()
+//if bf.solve() bf.PrintPath(bf.Min())
 //else -inf
