@@ -1,3 +1,5 @@
+//2020-06-29 00:01:01
+//Writer SakaTaku
 #include<iostream>
 using namespace std;
 const long long MAX = 100, INF = 1e18, WHITE = 0, GRAY = 1, BLACK = 2;
