@@ -1,3 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+struct WeightedGraph
+{
+   int n; //頂点は[0:n)
+   WeightedGraph(int n):n(n){}
+   struct Edge {
+      int ep;  //ep:EndPoint
+      ll  w;   //w:Weight
+      Edge(int ep, ll w):ep(ep),w(w){}
+   };
+   vector<vector<Edge>> E;
+   void add(int v, int w, ll weight){
+      E[v].push_back(Edge(w, weight));
+   }
+};
+
+struct Dijkstra
+{
+   int s;
+   WeightedGraph wg;
+   vector<ll> d;
+   Dijkstra(WeightedGraph wg, int s=0):wg(wg),s(s){
+      d = vector<ll>(wg.n);
+   };
+
+};
+
 void dijkstra(int x){
     int minv;
     int d[MAX], color[MAX];
