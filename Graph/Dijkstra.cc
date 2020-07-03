@@ -1,9 +1,6 @@
-//2020-07-03 04:37:43
+//2020-07-03 05:32:32
 //writer SakaTaku
 //Dijkstra法   O(|E|log|V|)
-using ll = long long;
-#include<bits/stdc++.h>
-using namespace std;
 struct Edge {int to; ll cost;};
 typedef pair<ll, int> P;
 int V;
@@ -25,7 +22,7 @@ struct Dijkstra {
       pq.push(P(0,s));
       while (!pq.empty()){
          P p = pq.top(); pq.pop();
-         if (d[p.second] <p.first)continue;
+         if (d[p.second] < p.first)continue;
          for (auto &&e : G[p.second]){
             if (d[e.to] > d[p.second] + e.cost){
                d[e.to] = d[p.second] + e.cost;
