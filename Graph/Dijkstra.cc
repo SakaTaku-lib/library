@@ -7,13 +7,13 @@ int V;
 struct Dijkstra {
    int V;
    vector<vector<Edge>> G;
-   Dijkstra(int V):G(V){}
+   Dijkstra(int V):V(V),G(V){}
    void add(int v, int w, int cost){
       Edge e;
       e.to = w; e.cost = cost;
       G[v].push_back(e);
    }
-   ll inf = (1<<60);
+   ll inf = (1ll<<60);
    vector<ll> d;
    void solve(int s){
       priority_queue<P, vector<P>, greater<P>> pq;
