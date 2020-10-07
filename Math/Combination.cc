@@ -1,6 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-using ll = long long;
 ll power(ll x, ll n, ll M){
     ll res = 1;
     if(n > 0){
